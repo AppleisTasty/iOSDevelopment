@@ -1,0 +1,1 @@
+1. If you want to make something confortable to use, just keep it simple. Don't let the user make too much choices, for example, pressed a button and choose from 10 options, that's drives people crazy. One button for one purpose, that's the best.
