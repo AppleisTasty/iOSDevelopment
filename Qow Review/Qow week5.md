@@ -268,7 +268,7 @@ There are many reducers, each with a "bucket number".
 
 **The process**
 
-The engine wait for map on all nodes to finish, then make the output of mappers available to the reducers.
+The engine waits for map on all nodes to finish, then makes the output of mappers available to the reducers.
 
 Each reducer pull the relevant data from different mapper nodes.
 
@@ -284,13 +284,13 @@ mapper can be in parallel, so as reducer.
 
 The MapReduce engine has a "master program". It divvies up tasks. Detects the value pair that causes a mapper to crash, so to skip that when re-executing.
 
-The mapper and reducer has re-execute mechanism if it failes at the first time.
+The mapper and reducer has re-execute mechanism if they failed at the first time.
 
 ### Optimization
 
 1. If a mapper is doing really slow, the "master" will replicate its job to several additional components, and keep the results from the fastest one, ignore the rest.
 
-2. The "combiner" is set on the same machine as the mapper (one machine may have more than one mapper), it can do a mini-reduce while waiting for other mappers to complete, so to save bandwith for the real reduce.
+2. The "combiner" is set on the same machine as the mapper (one machine may have more than one mapper), it can do a mini-reduce before sending it through the barrier, so to save bandwith for the real reduce.
 
 ![image-20220115225813699](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201152258858.png)
 
@@ -368,7 +368,7 @@ for each tuple t
 
 reducer
 for each key t
-	case two t-values:
+	case more than one t-values:
 		emit(t, t)
 	case one t-value:
 		emit(t, t)
@@ -476,11 +476,11 @@ for each key a
 
 ![image-20220116003013498](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201160030637.png)
 
+![image-20220116102457433](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201161024596.png)
 
 
 
-
-
+![image-20220116102445776](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201161024966.png)
 
 
 

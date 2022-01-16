@@ -10,7 +10,7 @@
 
 
 
-4. Describe the typical recipe for porcessing Graph Algorithms using MapReduce
+4. Describe the typical recipe for porcessing Graph Algorithms using MapReduce.
 
 
 

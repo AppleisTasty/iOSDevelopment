@@ -85,6 +85,8 @@ ASK 就是逻辑非
 
 好处：减少storage，坏处：增加查询时需要join的次数
 
+> With a single table, queries will often require multiple sel-joins, which are, in principle, often difficult to evaluate efficiency.
+
 ### property table
 
 原理：按照每个property生成table
@@ -275,8 +277,6 @@ SPO分开设index，然后合并成一张表union
 然后记住SPO分别对应的行的range
 
 好处：involve less redundancy，存储空间也更小，减小了key的size，访问index次数也更少
-
-
 
 
 
