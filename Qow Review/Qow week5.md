@@ -12,9 +12,9 @@ Map-Reduce
 
 # 考点
 
+1. Map-Reduce原理及性质
 
-
-
+2. Mapper和Reducer的代码实现
 
 # 内容梳理
 
