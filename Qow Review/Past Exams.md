@@ -10,10 +10,6 @@
 
 
 
-4. Describe the typical recipe for porcessing Graph Algorithms using MapReduce.
-
-
-
 5. **Articulate** the complementarity (at least two items) of SQL and NoSQL systems.
 
 > SQL: 

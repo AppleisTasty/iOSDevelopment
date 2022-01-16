@@ -138,3 +138,46 @@ Eventual Consistency：停止接受input之后就变consistent
 
 ![image-20220116212241621](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162122762.png)
 
+### 11. Steps for evaluating SPARQL query
+
+### 评估SPARQL query的步骤
+
+1. 将 SPAQL query string 转换成 abstract syntax form
+2. ASF 被map到 SPARQL abstract query（plan）（SPARQL algebra表示）
+3. 这个query plan被用来评估
+
+总结：转换成抽象表达式 - 生成plan - 评估
+
+
+
+### 12. 给Triple Table生成Index的三种方法
+
+有三种方式
+
+1. Multiple Access Path (MAP) approach
+2. HexTree approach
+3. TripleT approach
+
+目标就是index triple来支持 graph pattern 在 join 上的评估
+
+### MAP方法
+
+所有SPO的三三排列permutations都被index了
+
+### HexTree方法
+
+所有SPO的俩俩排列都被index了
+
+![image-20220114215912466](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162219924.png)
+
+好处：MAP 和 HexTree的方法能帮SPARQL的where语句实现 targeted joins
+
+坏处：非常冗余，占据永久空间。每个join都需要访问不止一个index，还要进行sort-merge join
+
+### TripleT 方法
+
+SPO分开设index，然后合并成一张表union
+
+然后记住SPO分别对应的行的range
+
+好处：involve less redundancy，存储空间也更小，减小了key的size，访问index次数也更少

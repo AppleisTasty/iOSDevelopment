@@ -256,6 +256,8 @@ project：把包含指定变量的规则留下
 
 原理：想象RDF是一张spo表
 
+> 这里句号表示 AND，也就是说这里有两张表，需要self-join然后筛选 （通过?a进行join)
+
 ## 给Triple Table 生成index
 
 有三种方式
