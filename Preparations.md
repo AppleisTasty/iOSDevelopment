@@ -1,0 +1,1 @@
+1. Regularly write blogs to github.

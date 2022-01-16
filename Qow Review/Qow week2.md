@@ -70,7 +70,7 @@ Query 优化的过程
 
 1. query compiler：编译
 
-parse: 解析query
+parse: 解析query成tree
 
 Translate: 转译成 algebraic expression 
 
@@ -208,13 +208,13 @@ join 和 cross product 都是满足 commutative law 的
 
 ### R10
 
-select的操作与交集、并集、除法 满足交换律
+select的操作与交集、并集、除法 满足分配律
 
 ![image-20220114123206200](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141232205.png)
 
 ### R11
 
-project操作与并集 满足交换律
+project操作与并集 满足分配律
 
 ![image-20220114123259451](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141232580.png)
 
@@ -238,7 +238,7 @@ Operator和Operator之间的协议
 
 1. Materialization：每个operator操作完的结果都暂时存在memory或disk，这个结果叫materialization
 
-2. Pipelining：数据传输。
+2. Pipelining：不存储中间结果的流传输。
 
 ## The Iterator Model 
 
@@ -346,8 +346,6 @@ Aggregate指的就是counts，sums，smallest，largest 之类的
 ### Select 的 size（一般考这个）
 
 ![image-20220114152436881](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141524021.png)
-
-![image-20220114152647483](https://cdn.j
 
 
 

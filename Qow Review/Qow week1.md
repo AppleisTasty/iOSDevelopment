@@ -137,7 +137,7 @@ $\rho _i (instructor) \times \sigma _{w.ID=12121} (\rho _w (instructor))$
 
 # RA in programming language
 
-整体格式:`\命令_{参数}
+整体格式: \命令_{参数}
 
 ```
 \rename_{Country_Name}
