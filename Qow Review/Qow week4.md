@@ -139,7 +139,7 @@ limit/offset
 
 `BGP` Basic Graph Pattern 是一个set的TP（Triple Pattern） 
 
-没有from的sql
+没有form的sql
 
 用`@prefix`添加前缀
 
