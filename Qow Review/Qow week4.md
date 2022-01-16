@@ -165,6 +165,14 @@ limit/offset
 
 ![image-20220114203650091](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201142036212.png)
 
+> if & binding & bound
+>
+> if(condition, then, else)
+>
+> bind(?x AS value)
+>
+> bound(?x) simply returns true if x is in the result, usually works with if.
+
 用OPTIONAL表示 partial binding，类似左连接
 
 ![image-20220114203734806](/Users/tablee/Library/Application%20Support/typora-user-images/image-20220114203734806.png)
