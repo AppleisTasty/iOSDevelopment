@@ -85,7 +85,7 @@ ASK 就是逻辑非
 
 好处：减少storage，坏处：增加查询时需要join的次数
 
-> With a single table, queries will often require multiple sel-joins, which are, in principle, often difficult to evaluate efficiency.
+> With a single table, queries will often require multiple self-joins, which are, in principle, often difficult to evaluate efficiency.
 
 ### property table
 

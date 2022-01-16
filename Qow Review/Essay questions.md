@@ -46,9 +46,39 @@ limit/offset
 
 good:
 
-The table is large, and query involves multiple times of self-join, which is hard for evaluation. May be many NULL values in the table and this consumes a lot of memory.
+1. Generated a relational table
 
 bad:
+
+1. wasted too much space
+2. possibly too many NULLs
+3. The table is too large
+
+
+
+**triple table**
+
+good:
+
+1. It's neat, and reduces the space consumed.
+
+bad:
+
+1. Single table,  too much self-joins in queries, difficult to evaluate efficiency.
+
+
+
+**property table**
+
+good:
+
+1. no need for NULLs to fill in
+2. less wasted I/O, can read only relevant attributes to the solution.
+
+bad:
+
+1. lack of support for unknown predicates (RDF supports unknown predicates)
+2. Insert or delete may lead to schema change operations
 
 
 
@@ -56,11 +86,55 @@ bad:
 ASK{
 	?AJ children ?a
 	?MD children ?b
-	where ?a > ?b
-
+	filter(?a > ?b)
 }
 ```
 
 ### 6. Three main dimensions involved in query optimization.
 
 ![image-20220116185042127](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201161850275.png)
+
+### 7. SQL 和 NoSQL
+
+### 现有的relational database注重两方面
+
+1. data intergrity：数据完整性，通过schema加强
+2. strict transaction semantics：防止并行程序形成 inconsistency
+
+### NoSQL注重两方面
+
+1. Elastic scaling：体积易于成长（应对web庞大的数据）
+2. Simple operations：操作要方便
+
+> 例子：shopping carts, user profiles, calendar data, customer data
+
+
+
+### 8. ACID 和 BASE
+
+![image-20220114190633311](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162114416.png)
+
+![image-20220114191951988](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162114515.png)
+
+![image-20220114192219213](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162114084.png)
+
+Basically Available: 随时都available，对任何request
+
+Soft state：系统状态会随时间改变（软的）
+
+Eventual Consistency：停止接受input之后就变consistent
+
+### 9. How NoSQl database reduce lookup times(using chord)
+
+![](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162115390.png)
+
+### 10. Something about the "Chord"
+
+**chord property**
+
+![image-20220116212218661](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162122775.png)
+
+**chord capabilities**
+
+![image-20220116212241621](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162122762.png)
+

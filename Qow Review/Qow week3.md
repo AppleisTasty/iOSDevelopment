@@ -116,6 +116,8 @@ Eventual Consistency：停止接受input之后就变consistent
 1. 每个节点都存了其他结点range的信息，如果每个节点都知道其他的，那么时间复杂度就是O(1)。代价就是额外需要维护和更新range信息。
 2. 每个Client可以存储不同节点的range信息。如果client知道所有的node，时间复杂度就是O(1)，代价就是要在各个Client上维护和更新range信息。
 
+`sharding`分区： All the data associated with a key is stored on a single node. (horizontally partitioned)
+
 ![image-20220114195534038](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141955166.png)
 
 > 先找最近前驱，再找这个前驱的后继节点
@@ -208,6 +210,8 @@ text
 
 `c.f.`means 'confer', aka 'compare'
 
+取得一个节点内包含的值 data()
+
 ![image-20220114185550190](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141855313.png)
 
 ![image-20220114185603475](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141856597.png)
@@ -224,7 +228,7 @@ Let: 绑定变量
 
 Where: 条件过滤
 
-Order: 排序
+Order by: 排序
 
 Return: 生成结果集
 

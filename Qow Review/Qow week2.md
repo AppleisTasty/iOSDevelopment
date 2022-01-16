@@ -347,7 +347,7 @@ Aggregate指的就是counts，sums，smallest，largest 之类的
 
 ![image-20220114152436881](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201141524021.png)
 
-
+### Natural join 的size
 
 1. 所有的都满足：T(R）x T(S)
 
