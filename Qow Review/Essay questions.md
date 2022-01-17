@@ -181,3 +181,49 @@ SPO分开设index，然后合并成一张表union
 然后记住SPO分别对应的行的range
 
 好处：involve less redundancy，存储空间也更小，减小了key的size，访问index次数也更少
+
+
+
+### 13. Why shared-nothing parallelism is the best?
+
+1. can deal with concurrent operation to update the data
+2. minimize the burden on the interconnect, don't need to transfer the whole data set. Only queries and answer and some intermediate results are transferred.
+
+
+
+### 14. Three Building blocks for evaluating query in parallel
+
+![image-20220115210515528](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162226987.png)
+
+### 15. problems with Hash-based & range-based data partitioning
+
+range & hash partition may cause uneven to the data partitioning, including:
+
+1. data skew: uneven distribution of data to the disk.
+2. execution skew: uneven load across processing elements.
+
+
+
+### 16. Fault tolerance in map-reduce
+
+### Fault tolerance
+
+The MapReduce engine has a "master program". It divvies up tasks. Detects the value pair that causes a mapper to crash, so to skip that when re-executing.
+
+The mapper and reducer has re-execute mechanism if they failed at the first time.
+
+
+
+### 17. Optimization in map-reduce
+
+### Optimization
+
+1. If a mapper is doing really slow, the "master" will replicate its job to several additional components, and keep the results from the fastest one, ignore the rest.
+
+2. The "combiner" is set on the same machine as the mapper (one machine may have more than one mapper), it can do a mini-reduce before sending it through the barrier, so to save bandwith for the real reduce.
+
+
+
+### 18.
+
+![image-20220116102445776](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201161024966.png)
