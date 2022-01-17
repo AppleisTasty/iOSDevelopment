@@ -50,9 +50,8 @@ good:
 
 bad:
 
-1. wasted too much space
-2. possibly too many NULLs
-3. The table is too large
+1. possibly too many NULLs, wasted too much space
+2. The table is too large
 
 
 
@@ -189,11 +188,20 @@ SPO分开设index，然后合并成一张表union
 1. can deal with concurrent operation to update the data
 2. minimize the burden on the interconnect, don't need to transfer the whole data set. Only queries and answer and some intermediate results are transferred.
 
+> 简而言之：
+>
+> 1. 可以处理并行
+> 2. 减少I/O压力，不用整个数据集传来传去
+
 
 
 ### 14. Three Building blocks for evaluating query in parallel
 
 ![image-20220115210515528](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201162226987.png)
+
+1. relation的分配
+2. operator间的pipeline
+3. operator在processing element 间的copy
 
 ### 15. problems with Hash-based & range-based data partitioning
 
