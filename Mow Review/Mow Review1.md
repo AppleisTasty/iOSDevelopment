@@ -79,7 +79,7 @@ Definition: **data that adheres to a pre-defined data model** and is therefore s
 
 Consistency: 一致性, Data changes should be consistent on both ends. 例如银行账户转钱，两边钱的总和要一致。
 
-Isolation: 独立性, transaction 中间过程对其他人不可见。
+Isolation: 独立性, transaction 之间相互不影响
 
 Durability: 持久性，transaction 成功后，变化确定且不可逆。
 
@@ -280,7 +280,7 @@ select * from table1 natural join table2
 
 **Inner Join 内连接** (inner可省略)
 
-就是corss join加个条件 (用on添加条件)
+就是cross join加个条件 (用on添加条件)
 
 ```sql
 select * from table1 inner join table2 on table1.A=table2.E
