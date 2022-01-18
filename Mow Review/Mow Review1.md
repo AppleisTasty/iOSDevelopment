@@ -6,6 +6,8 @@
 
 是什么 -> 有什么区别 -> 做法
 
+# Week1: 
+
 # Key Concepts
 
 | Data Models               | Flat Files | Table Based (The relational model) | Tree Based | Graph Based |

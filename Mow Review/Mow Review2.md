@@ -1,3 +1,5 @@
+# week2: Semi-structured data
+
 # Regular Expressions
 
 1. *e1,e2* (concatenation)
@@ -91,7 +93,7 @@ use a comma to seperate pairs.
 
 > How parsing and serializing does to the data.
 
-can be used to determine when two pieces of semi-structured data are the same, and what matters
+**can be used to determine when two pieces of semi-structured data are the same, and what matters**
 
 ![image-20220113185042879](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201131850986.png)
 
@@ -125,7 +127,15 @@ objects can refer to each other，加在set的前面 &object{}，不需要冒号
 
 
 
-week2 page 65
+> Store semi-structured data:
+>
+> (various formalisms)
+>
+> XML
+>
+> JSON
+
+
 
 
 
