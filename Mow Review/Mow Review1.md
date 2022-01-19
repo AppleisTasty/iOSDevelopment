@@ -30,6 +30,8 @@ The tool used to parse&validate text against schema is called `validators` or `s
 
 JSON internal Repr : Trees, a list of strings
 
+![image-20220119214735787](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201192147857.png)
+
 # Idendity
 
 | File           | identify                         |
