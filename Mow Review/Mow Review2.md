@@ -93,11 +93,13 @@ use a comma to seperate pairs.
 
 > How parsing and serializing does to the data.
 
-**can be used to determine when two pieces of semi-structured data are the same, and what matters**
+**can be used to determine when two pieces of semi-structured data are the same, and what matters**.
 
-![image-20220113185042879](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201131850986.png)
+The same external representaion can result in differnet internal representatiaons (depending on the schema used).
 
-最上面是internal，最下面是external
+![image-20220118175046029](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201181750112.png)
+
+最上面是internal，最下面是external **(这个表背出来)**
 
 parsing: 解析, serializing 串行化
 
@@ -134,6 +136,144 @@ objects can refer to each other，加在set的前面 &object{}，不需要冒号
 > XML
 >
 > JSON
+
+They have different mechanisms for **selft-describing**. e.g. schema languages.
+
+**schema** describes structure and datatypes.
+
+## JSON
+
+JavaScript Object Notation
+
+To serialise/store/transmit JavaScript objects
+
+> JSON objects can be serialised into **JSON** and **XML**.
+>
+> But in XML it needs more design choices. (e.g. element/attribute names?)
+
+### 基本语法
+
+Arrays: [1, 2, "one", "two"]
+
+objects: {"one":1, "two":2}
+
+> 方括号数组，花括号object
+
+### JSON vs. XML
+
+![image-20220118181711534](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201181817632.png)
+
+XML 用的 elements
+
+JSON 用的 objects （一般就是array和object的组合）
+
+**Application using JSON** Ajax
+
+## Self-describing & Schema Languages
+
+"From the external representation one should be able to derive the corresponding internal representation."
+
+"If one converts from an internal representation to the external representation and back again, the new internal representation should equal the old"
+
+Give a base format and a specific document , to parse the data into an internal representation.
+
+> JSON is a little bit more `self-describing` than CSV
+
+### CSV
+
+by providing the first line as the header with filed names
+
+!!! Only JSON or XML itself cannot be `self-describing` enough, we need schemas!
+
+## Schema
+
+is a description
+
+1. for SQL it describes: tables, their names and their attributes, keys, integrity constraints
+2. for CSV it describes: columns, value range
+3. for JSON it describes: structure (how objects are nested, which key is required), data (datatypes, restrictions)
+
+### A schema describes
+
+1. what is legal
+2. what is expected
+3. what is assumed (default value)
+
+Two modes fro using a schema
+
+1. descriptive (describing documents for other people)
+2. prescriptive (规定的，指定的)
+
+## Schema languages
+
+### 1. CSV (CSVW)
+
+![image-20220118203915444](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201182039541.png)
+
+> 特征：
+>
+> 第一行引用csvw (Link header)
+>
+> 第二行链接文件
+>
+> 第三行 tableSchema
+>
+> (Note that you can use regular expressions to describe column titles or values in CSVW)
+
+It supports:
+
+1. built-in datatypes
+2. XSD (XML Schema Data Types)
+
+### 2. JSON Schema
+
+![image-20220118211205195](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201182112283.png)
+
+```
+{
+	"$Schema": ,
+	"title": ,
+	"type":"object",
+	"properties":{
+		"id":{
+			"type":integer
+		}
+	}
+	"required":["id","name","price"]
+}
+```
+
+
+
+![image-20220118211241206](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201182112309.png)
+
+![image-20220118212318686](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201182123781.png)
+
+![image-20220118212443443](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201182124520.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

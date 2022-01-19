@@ -10,15 +10,25 @@
 
 # Key Concepts
 
-| Data Models               | Flat Files | Table Based (The relational model) | Tree Based | Graph Based |
-| ------------------------- | ---------- | ---------------------------------- | ---------- | ----------- |
-| IntRepr                   |            |                                    |            |             |
-| ExtRepr                   | CSV        |                                    |            |             |
-| Schema(langs)             |            | SQL                                |            |             |
-| Manipulation Tool         |            |                                    |            |             |
-| Data formats & Robustness |            |                                    |            |             |
+| Data Models               | Flat Files              | Table Based (The relational model) | Tree Based                                              | Tree based                           | Graph Based |
+| ------------------------- | ----------------------- | ---------------------------------- | ------------------------------------------------------- | ------------------------------------ | ----------- |
+| IntRepr                   | list of strings, arrays | table                              | Tree; list of strings; objects and arrays with nesting. | DOM tree; Infoset, XPath.            |             |
+| ExtRepr                   | CSV file; text          |                                    | JSON file/snippet; text                                 | XML                                  |             |
+| Schema(langs)             | CSVW                    | SQL                                | JSON schema                                             | DTD; XML Schema; Schematron; RelaxNG |             |
+| Manipulation Tool         |                         |                                    |                                                         | XQueries; XSLT; XPath                |             |
+| Data formats & Robustness |                         |                                    |                                                         |                                      |             |
 
+> JSON is not "made for" trees, its IR can be in other forms.
 
+internal repr: XML  to dom tree, PSVI
+
+DOM = Document Object Model
+
+The tool used to parse&validate text against schema is called `validators` or `schema-aware parsers`
+
+![image-20220118112258645](https://cdn.jsdelivr.net/gh/AppleisTasty/PicGarage/tmp/202201181123187.png)
+
+JSON internal Repr : Trees, a list of strings
 
 # Idendity
 
@@ -36,7 +46,7 @@
 | ---------------- | ------------------ | ------------------------------- |
 | relational model | relational algebra | SQL (Structured query language) |
 
-
+JSON and XML are two formalism for semi-structured data.
 
 ### Data Life-span:
 
