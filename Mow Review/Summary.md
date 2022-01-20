@@ -86,12 +86,23 @@ draconian error handling: 1 well-formedness error: BOOM
 </xs:schema>
 ```
 
+```
+<xs:simpleType>
+	<xs:annotation>
+		<xs:documentation>This document</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string"></xs:restriction>
+</xs:simpleType>
+```
+
+
+
 ### Schematron
 
 ```
 <pattern>
 	<rule context = "catalogue">
-		<assert test = "count(catalogue) > 1">
+		<assert test = "count(catalogue) <= 1">
 			There are more than one catalogue!
 		</assert>
 	</rule>
